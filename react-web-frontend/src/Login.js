@@ -18,7 +18,7 @@ export default function Login({ acceptToken }) {
         });
         if (response.ok)
             acceptToken((await response.json()).token);
-        else if (response.status == 406)
+        else if (response.status === 406)
             setErrors((await response.json()).errors);
         else
             window.alert(response.status + ': ' +
